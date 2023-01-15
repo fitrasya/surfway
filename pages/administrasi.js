@@ -33,7 +33,7 @@ export default function administrasi() {
                 Kurang Mudah
               </div>
             </Link>
-            <Link href={"/selesai"}>
+            <Link href={"/prosedur"}>
               <div className="bg-rose-500 py-2.5 shadow-lg hover:cursor-pointer hover:bg-rose-600 flex justify-center gap-2 text-sm">
                 Tidak Mudah
               </div>
