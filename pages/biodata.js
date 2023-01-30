@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 
 export default function survey() {
   const router = useRouter()
-  const submitContact = async (event) => {
+  const submit = async (event) => {
     event.preventDefault()
     var formdata = new FormData();
     formdata.append("nama", event.target.nama.value);
@@ -20,16 +20,16 @@ export default function survey() {
       redirect: 'follow'
     };
 
-    fetch("http://103.150.92.79:1323:1323/api/responden", requestOptions)
-    .then(response => response.json())
-    .then(result => localStorage.setItem("id", result.data))
-    .then(router.push("/substansi"))
-    .catch(error => console.log('error', error));
+    fetch("http://103.150.92.79:1323/api/responden", requestOptions)
+      .then((response) => response.json())
+      .then((result) => localStorage.setItem("id", result.data))
+      .then(router.push("/substansi"))
+      .catch((error) => console.log("error", error));
   };
 
   return (
     <Layout>
-      <form className="grid grid-cols-2 w-1/3" onSubmit={submitContact}>
+      <form className="grid grid-cols-2 w-1/3" onSubmit={submit}>
         <div className="col-span-2 px-7 py-5 bg-white shadow-lg text-gray-600">
           <div className="mb-5 border-b-2 border-sky-500 pb-3 font-medium">
             BIODATA
