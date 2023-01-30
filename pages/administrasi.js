@@ -1,7 +1,7 @@
 import Layout from "../components/Layout";
 import Link from "next/link";
 
-export default function administrasi() {
+export default function Administrasi() {
   return (
     <Layout>
       <div className="grid grid-cols-2 w-2/3">

@@ -2,7 +2,7 @@ import Layout from "../components/Layout";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-export default function survey() {
+export default function Biodata() {
   const router = useRouter()
   const submit = async (event) => {
     event.preventDefault()

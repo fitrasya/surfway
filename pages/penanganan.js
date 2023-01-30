@@ -2,7 +2,7 @@ import Layout from "../components/Layout";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 
-export default function penanganan() {
+export default function Penanganan() {
   useEffect(() => {
     if (!localStorage.getItem("id")) {
       router.push("/");

@@ -1,7 +1,7 @@
 import Layout from "../components/Layout";
 import Link from "next/link";
 
-export default function selesai() {
+export default function Selesai() {
   return (
     <>
       <Layout>

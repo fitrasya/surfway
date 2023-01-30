@@ -2,7 +2,7 @@ import Layout from "../components/Layout";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 
-export default function prosedur() {
+export default function Prosedur() {
   useEffect(() => {
     if (!localStorage.getItem("id")) {
       router.push("/");
