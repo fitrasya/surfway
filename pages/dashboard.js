@@ -1,58 +1,28 @@
 import Layout from "../components/Layout";
 import Link from "next/link";
 
-export default function dashboard({respondens}) {
-  console.log(respondens)
+export default function dashboard({dashboard}) {
   return (
     <Layout>
     <div className="text-white text-sm w-2/3 font-medium">
       <div className="text-xl text-center mb-16 uppercase">
         Dashboard Survey Kepuasan Pelanggan<br></br>Direktorat Jabatan ASN
       </div>
-      <div className="grid uppercase grid-cols-6">
-        <div className="col-span-1 text-sm text-center border-b py-2">
-          NIP
-        </div>
-        <div className="col-span-1 text-sm text-center border-b py-2">
-          Nama
-        </div>
-        <div className="col-span-1 text-sm text-center border-b py-2">
-          Instansi
-        </div>
-        <div className="col-span-1 text-sm text-center border-b py-2">
-          Unit Kerja
-        </div>
-        <div className="col-span-1 text-sm text-center border-b py-2">
-          Jabatan
-        </div>
-        <div className="col-span-1 text-sm text-center border-b py-2">
-          No. HP
-        </div>
-      </div>
       { 
-        respondens.map((responden) => {
+        dashboard.map((dash) => {
           return (
-            <div key={responden.id} className="grid grid-cols-6 font-light border-b">
-              <div className="col-span-1 text-sm text-center py-2">
-                {responden.nip}
+            <div
+              key={dash.Kesimpulan}
+              className="grid grid-cols-6 font-light"
+            >
+              <div className="col-start-3 col-span-1 uppercase text-sm text-center py-2">
+                {dash.Kesimpulan} puas
               </div>
-              <div className="col-span-1 text-sm text-center py-2">
-                {responden.nama}
-              </div>
-              <div className="col-span-1 text-sm text-center py-2">
-                {responden.instansi}
-              </div>
-              <div className="col-span-1 text-sm text-center py-2">
-                {responden.unit}
-              </div>
-              <div className="col-span-1 text-sm text-center py-2">
-                {responden.jabatan}
-              </div>
-              <div className="col-span-1 text-sm text-center py-2">
-                {responden.telp}
+              <div className="col-start-4 col-span-1 uppercase text-sm text-center py-2">
+                {dash.Jumlah} responden
               </div>
             </div>
-        )})
+          );})
       }
       <div className="grid gap-8 text-white uppercase text-sm grid-cols-3 font-medium">
         <Link href={"/"} className="col-start-2 mt-16">
@@ -81,14 +51,12 @@ export default function dashboard({respondens}) {
 }
 
 export const getStaticProps = async () => {
-  const response = await fetch("http://103.150.92.79:1323/api/responden")
-  const respondens = await response.json()
-
-  console.log(respondens)
+  const response = await fetch("http://103.150.92.79:1323/api/dashboard")
+  const dashboard = await response.json()
 
   return {
     props: {
-      respondens: respondens.data
-    }
-  }
+      dashboard: dashboard,
+    },
+  };
 }
