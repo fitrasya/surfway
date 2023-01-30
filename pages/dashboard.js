@@ -1,7 +1,7 @@
 import Layout from "../components/Layout";
 import Link from "next/link";
 
-export default function dashboard({dashboard}) {
+export default function Dashboard({dashboard}) {
   return (
     <Layout>
     <div className="text-white text-sm w-2/3 font-medium">

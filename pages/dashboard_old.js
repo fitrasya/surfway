@@ -1,7 +1,7 @@
 import Layout from "../components/Layout";
 import Link from "next/link";
 
-export default function dashboard() {
+export default function Dashboard() {
   return (
     <Layout>
       <div className="grid gap-8 text-white uppercase text-sm grid-cols-4 w-2/3 font-medium">
