@@ -21,7 +21,7 @@ export default function Prosedur() {
     };
 
     fetch(
-      "http://localhost:1323/api/survey/" + localStorage.getItem("id"),
+      "http://103.150.92.79:1323/api/survey/" + localStorage.getItem("id"),
       requestOptions
     )
       .then((response) => response.text())
