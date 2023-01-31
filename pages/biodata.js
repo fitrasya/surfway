@@ -20,7 +20,7 @@ export default function Biodata() {
       redirect: 'follow'
     };
 
-    fetch("http://localhost:1323/api/responden", requestOptions)
+    fetch("http://103.150.92.79:1323/api/responden", requestOptions)
       .then((response) => response.json())
       .then((result) => localStorage.setItem("id", result.data))
       .then(router.push("/substansi"))
