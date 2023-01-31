@@ -21,7 +21,7 @@ export default function Penanganan() {
     };
 
     fetch(
-      "http://103.150.92.79:1323/api/survey/" + localStorage.getItem("id"),
+      "http://localhost:1323/api/survey/" + localStorage.getItem("id"),
       requestOptions
     )
       .then((response) => response.text())
