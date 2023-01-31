@@ -1,7 +1,13 @@
 import Layout from "../components/Layout";
 import Link from "next/link";
+import { useEffect } from "react";
 
 export default function Index() {
+  useEffect(() => {
+    if (localStorage.getItem("id")) {
+      localStorage.removeItem("id");
+    }
+  }, []);
   return (
     <>
       <Layout>
