@@ -51,7 +51,7 @@ export default function Dashboard({dashboard}) {
 }
 
 export const getStaticProps = async () => {
-  const response = await fetch("http://103.150.92.79:1323/api/dashboard")
+  const response = await fetch("http://localhost:1323/api/dashboard")
   const dashboard = await response.json()
 
   return {
