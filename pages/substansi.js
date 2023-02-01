@@ -25,7 +25,7 @@ export default function Substansi() {
       requestOptions
     )
       .then((response) => response.text())
-      .then(router.push("/prosedur"))
+      .then(router.push("/administrasi"))
       .catch((error) => console.log("error", error));
   };
   return (
