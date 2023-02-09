@@ -1,16 +1,14 @@
 import Layout from "../components/Layout";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
 
 export default function Substansi() {
-  useEffect(() => {
-    if (!localStorage.getItem("id")) {
-      router.push("/");
-    }
-  }, []);
-  
   const router = useRouter()
   const submit = async (event, value) => {
+    if (!localStorage.getItem("id")) {
+      alert("sesi telah berakhir");
+      router.push("/")
+    }
+
     var formdata = new FormData();
     formdata.append("substansi", value);
 
